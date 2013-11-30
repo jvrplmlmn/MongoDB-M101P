@@ -417,3 +417,29 @@ Please use double quotes at this time.
 
 	if "apple" in fruit:
 
+## Bottle Framework: URL Handlers
+
+![](./BottleTutorial.png)
+
+Test 1: /
+
+	$ curl -i localhost:8080   [13:58:12]
+	HTTP/1.0 200 OK
+	Date: Sat, 30 Nov 2013 12:59:11 GMT
+	Server: WSGIServer/0.1 Python/2.7.3
+	Content-Length: 12
+	Content-Type: text/html; charset=UTF-8
+
+	Hello World
+	$
+
+Test 2: /testpage:
+
+	$ curl -i localhost:8080/testpage
+	HTTP/1.0 200 OK
+	Date: Sat, 30 Nov 2013 13:00:26 GMT
+	Server: WSGIServer/0.1 Python/2.7.3
+	Content-Length: 19
+	Content-Type: text/html; charset=UTF-8
+
+	this is a test page%
