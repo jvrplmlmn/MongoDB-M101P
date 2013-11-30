@@ -115,3 +115,37 @@ Which of the following are valid JSON documents?
 - **{a:1, b:{}, c: [ { a:1, b:2}, 5, 6]}** The value for the b key is an empty JSON document. The value for the c key is an array with 1 JSON document and 2 values.
 - **{ }** Empty JSON document.
 
+## Installing MongoDB (mac)
+
+Download the latest stable version:
+
+	tar xvf mongodb-osx-x86_64-2.4.8.tgz
+
+For development environment:
+
+	sudo $SHELL 
+	mkdir -p /data/db
+	chmod 777 /data/db
+	ls -ld /data/db
+
+Run the `mongod` process and check it's up and running:
+
+	# bin $ ./mongod
+
+
+Open another terminal and do some testing:
+
+	# bin $
+	MongoDB shell version: 2.4.8
+	connecting to: test
+	Welcome to the MongoDB shell.
+	For interactive help, type "help".
+	For more comprehensive documentation, see
+		http://docs.mongodb.org/
+	Questions? Try the support group
+		http://groups.google.com/group/mongodb-user
+	> db.names.save({'name':'javier'})
+	> db.names.find()
+	{ "_id" : ObjectId("5299c864071a97a435a8a277"), "name" : "javier" }
+	>
+
