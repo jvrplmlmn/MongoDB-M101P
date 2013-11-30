@@ -21,3 +21,38 @@ What counts towards your final grade in the class?
 - **Final Exam**
 - Class Participation
 
+## What is MongoDB?
+
+- Non Relational datastore for **JSON** documents.
+- **JSON** stands for JavaScript Object Notation
+- Key-value storage
+
+Examples:
+
+	{"name": "Andrew"}
+
+	{"a": 4,
+	 "b": 5,
+	 "c": 7}
+
+JSON documents can have some kind of hierarchy:
+
+	{a: 6,
+	 b: 7,
+	 fruit: ["apple", "pear", "banana"]}
+
+Relational data is usually a series of tables (columns and rows).
+
+**MongoDB is Schemaless**
+
+Different documents can have different schemas.
+
+### Quiz: What is MongoDB?
+
+Which of the following statements are true about MongoDB?
+
+- **MongoDB is document oriented.**
+- MongoDB supports Joins.
+- **MongoDB has dynamic schema.**
+- MongoDB supports SQL.
+
