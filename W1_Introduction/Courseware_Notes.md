@@ -309,4 +309,34 @@ You'd have to go to the `comments` table to display the comments. And to know wh
 
 And to know what post tags you had, you have to go to the `post_tags` table, the tags themselves are in the `tags` table.
 
+## Blog in Documents
+
+post 
+    
+	{title: "Free online classes", 
+     body: "...",
+     author: "javier",
+     date: "...", 
+     comments: [{name: "Joe Biden",
+                 email: "joe@whitehouse.gov",
+                 comment: "..."},
+                {...}],
+     tags: ["cycling", "education", "startups"]}
+
+authors
+
+    {_id: "javier",
+     password: "..."}
+
+### Quiz: Blog in Documents
+
+Given the document schema that we proposed for the blog, how many collections would we need to access to display the blog home page?
+
+- 0
+- **1*
+- 2
+- 4
+
+Only the "post" collection. We don't have to access the "authors" collection, because we have the authors name within the "post". 
+
 
