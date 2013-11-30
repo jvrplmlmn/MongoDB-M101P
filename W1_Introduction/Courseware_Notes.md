@@ -224,3 +224,16 @@ Modify the content in the mongodb:
 	>
 
 Refresh the URL and check the changes.
+
+## JSON Revisited
+
+Data structures:
+
+- **Arrays**: lists of things `[...]`
+- **Dictionaries**: associated maps `{ keyword:value,}`
+
+### Quiz: JSON Revisited
+
+Write the JSON for a simple document containing a single "fruit" that has as its value an array containing three strings: "apple", "pear", and "peach":
+
+	{"fruit": ["apple", "pear", "peach"]}	
