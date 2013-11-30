@@ -174,4 +174,17 @@ Test it:
 - Open a browser
 - Type: `localhost:8080/hello/foo`
 
+## Installing PyMongo (mac)
 
+- MondoDB installed, running as `mondod` process.
+- Application, writted in Python using the bottle framework. Allows to get HTTP requests.
+
+PyMongo is the driver that connects the application and the DB.
+
+Install:
+
+	# Download:
+	api.mongodb.org/python/current
+
+	# Pip: 	
+	pip install pymongo
