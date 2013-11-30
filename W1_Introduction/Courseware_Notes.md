@@ -132,7 +132,6 @@ Run the `mongod` process and check it's up and running:
 
 	# bin $ ./mongod
 
-
 Open another terminal and do some testing:
 
 	# bin $
@@ -148,4 +147,31 @@ Open another terminal and do some testing:
 	> db.names.find()
 	{ "_id" : ObjectId("5299c864071a97a435a8a277"), "name" : "javier" }
 	>
+## Installing Bottle and Python
+
+`Bottle` is a Python web framework.
+
+Installing:
+
+	pip install bottle
+
+Example code:
+
+	from bottle import route, run, template
+
+	@route('/hello/<name>')
+	def index(name='World'):
+    	return template('<b>Hello {{name}}</b>!', name=name)
+
+	run(host='localhost', port=8080)
+
+Run it:
+
+	python hello_world.py
+
+Test it:
+
+- Open a browser
+- Type: `localhost:8080/hello/foo`
+
 
