@@ -339,4 +339,13 @@ Given the document schema that we proposed for the blog, how many collections wo
 
 Only the "post" collection. We don't have to access the "authors" collection, because we have the authors name within the "post". 
 
+## Introduction to Schema Design
 
+### Quiz: Introduction to Schema Design
+
+In which scenario is it impossible to embed data within a document (you must put the data in it a separate collection)? Check all that apply.
+
+- The data would be duplicated across multiple objects within a collection.
+- You need an index on the data element.
+- **The embedded data could exceed the 16MB document limit within MongoDB.**
+- The data is not isomorphic.
