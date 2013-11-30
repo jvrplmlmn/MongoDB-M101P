@@ -443,3 +443,7 @@ Test 2: /testpage:
 	Content-Type: text/html; charset=UTF-8
 
 	this is a test page%
+
+## Bottle Framework: Using Views
+
+![](./BottleFramework_MVC.png)
