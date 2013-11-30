@@ -188,3 +188,39 @@ Install:
 
 	# Pip: 	
 	pip install pymongo
+
+## Hello World on a Web Server
+
+![](./BringingItAllTogether.png)
+
+Run:
+
+	# bin $ ./mongod
+
+Open browser:
+
+	localhost:8082
+
+Modify the content in the mongodb:
+	
+	$ ./mongo
+	MongoDB shell version: 2.4.8
+	connecting to: test
+	> db.names.find()
+	{ "_id" : ObjectId("5299c864071a97a435a8a277"), "name" : "javier" }
+	> var j = db.names.findOne()
+	> j.name = "Dwight"
+	Dwight
+	> db.names.save(j)
+	> var j = db.names.findOne()
+	> j
+	{ "_id" : ObjectId("5299c864071a97a435a8a277"), "name" : "Dwight" }
+	> var j = db.names.findOne()
+	> j.name = "Andrew"
+	Andrew
+	> db.names.save(j)
+	> j
+	{ "_id" : ObjectId("5299c864071a97a435a8a277"), "name" : "Andrew" }
+	>
+
+Refresh the URL and check the changes.
