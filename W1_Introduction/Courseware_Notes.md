@@ -95,7 +95,6 @@ Indexes are supported within MongoDB, they're neccesary for good performance, an
 	> db.things.find()
 	{ "_id": ObjectID("..."), "a": 1, "b": 2, "c": 3 }
 
-
 ### Quiz: Quick introduction to the Mongo Shell
 
 Which of the following expressions are valid JSON documents?
@@ -105,4 +104,14 @@ Which of the following expressions are valid JSON documents?
 - {a:1; b:1; c:4}
 - (A,1; b:2; c,4}
 
+## Introduction to JSON
+
+### Quiz: Introduction to JSON
+
+Which of the following are valid JSON documents?
+
+- **{a:1, b:2, c: 3}**
+- **{a:1, b:2, c:[1,2,3,4,5]}** The third key has a value within an array.
+- **{a:1, b:{}, c: [ { a:1, b:2}, 5, 6]}** The value for the b key is an empty JSON document. The value for the c key is an array with 1 JSON document and 2 values.
+- **{ }** Empty JSON document.
 
