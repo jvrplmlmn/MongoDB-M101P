@@ -81,6 +81,28 @@ Indexes are supported within MongoDB, they're neccesary for good performance, an
 
 ## Overview of Building an App with MongoDB
 
-mongod process
+- **mongod** process
+- **mongo shell**, connects to mongod and allows you to interact with it
+- Python: bottle, pymongo
 
-mongo shell, connects to mongod and allows you to interact with it
+## Quick introduction to the Mongo Shell
+
+	# mongo
+	Connecting to: test
+	> use test
+	switched to db test
+	> db.things.save({a:1, b:2, c:3}
+	> db.things.find()
+	{ "_id": ObjectID("..."), "a": 1, "b": 2, "c": 3 }
+
+
+### Quiz: Quick introduction to the Mongo Shell
+
+Which of the following expressions are valid JSON documents?
+
+- **{a:1, b:2, c:3}**
+- {a,1; b,4, c,6}
+- {a:1; b:1; c:4}
+- (A,1; b:2; c,4}
+
+
