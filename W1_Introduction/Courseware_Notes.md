@@ -452,4 +452,6 @@ Test 2: /testpage:
 
 ![](./BottleFramework_HandlingFormContent.png)
 
+## Bottle Framework: Using Cookies
 
+![](./BottleFramework_Cookies.png)
