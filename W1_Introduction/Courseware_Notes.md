@@ -56,3 +56,27 @@ Which of the following statements are true about MongoDB?
 - **MongoDB has dynamic schema.**
 - MongoDB supports SQL.
 
+## MongoDB Relative to Relational
+
+Scalability & Performance vs Depths of Functionality
+
+- Scalability & Performance = memcached, key-value store
+- Depth of Functionality = RDBms (ie. Oracle)
+
+MongoDB doesn't support:
+- **Joins**: joins scale poorly.
+- **Transactions**.
+
+### Quiz: MongoDB Relative to Relational
+
+Which features did MongoDB omit in order to retain scalability?
+
+- **Joins**
+- Indexes
+- Secondary Indexes
+- **Transactions across multiple collections**
+
+Joins are not particulary horizontally scalable.
+Indexes are supported within MongoDB, they're neccesary for good performance, and they allow horizontal scalable.
+
+
