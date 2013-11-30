@@ -447,3 +447,9 @@ Test 2: /testpage:
 ## Bottle Framework: Using Views
 
 ![](./BottleFramework_MVC.png)
+
+## Bottle Framework: Handling Form Content
+
+![](./BottleFramework_HandlingFormContent.png)
+
+
