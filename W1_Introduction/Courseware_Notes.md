@@ -253,3 +253,60 @@ Write a JSON document with a single key, "address" that has as it value another 
 ## JSON Spec
 
 	www.json.org
+
+## Blog in Relational TablesTables
+
+![](./RelationalModelForBlog.png)
+
+![](./RelationalModelForBlog2.png)
+
+### Quiz: Blog in Relational TablesTables
+
+Let’s assume that our blog can be modeled with the following relational tables:
+
+    authors:
+    	author_id,
+    	name,
+    	email,
+    	password
+    
+    posts:
+    	post_id,
+    	author_id
+    	title,
+    	body,	
+    	publication_date
+    
+    comments:
+    	comment_id,
+    	name, 
+    	email,
+    	comment_text
+    
+    post_comments:
+    	post_id,
+    	comment_id
+    
+    
+    tags
+    	tag_id
+    	name
+    
+    post_tags
+    	post_id
+    	tag_id    
+
+In order to display a blog post with its comments and tags, how many tables will need to be accessed?
+
+- 2
+- 3
+- 5
+- **6**
+
+In order to show a blog post with all of its comments and tags, you'd have to hit the `post` table. Only an author ID here, so you have to access the `authors` table in order to get the author`s name.
+
+You'd have to go to the `comments` table to display the comments. And to know which comments go with which post, you'd have to go to the `post_comments` table.
+
+And to know what post tags you had, you have to go to the `post_tags` table, the tags themselves are in the `tags` table.
+
+
