@@ -79,4 +79,8 @@ Which features did MongoDB omit in order to retain scalability?
 Joins are not particulary horizontally scalable.
 Indexes are supported within MongoDB, they're neccesary for good performance, and they allow horizontal scalable.
 
+## Overview of Building an App with MongoDB
 
+mongod process
+
+mongo shell, connects to mongod and allows you to interact with it
