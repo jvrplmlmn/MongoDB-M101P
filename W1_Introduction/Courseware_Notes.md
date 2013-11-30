@@ -498,4 +498,15 @@ Check the db:
     	}
     }
     >
-    
+   
+## Pymongo: Exception Processing
+
+Run the program:
+
+	python mongo_exception_with_exception.py
+
+Run the program:
+
+	python mongo_exception.py
+
+
