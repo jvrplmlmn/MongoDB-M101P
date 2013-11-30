@@ -349,3 +349,71 @@ In which scenario is it impossible to embed data within a document (you must put
 - You need an index on the data element.
 - **The embedded data could exceed the 16MB document limit within MongoDB.**
 - The data is not isomorphic.
+
+## Introduction to Python
+
+- Readable
+- Garbage collected
+- Dynamically tiped
+
+### Quiz: Introduction to Python
+
+Write an expression to concatenate two strings "hat" and "pin" in Python to the string "hatpin"
+
+	"hat" + "pin"
+
+## Python Lists
+
+### Quiz: Python Lists
+
+Write the to code to initialize a list with the items "hammer", "nail" and "wall" and assign the list to the variable named "things".
+
+	things = ["hammer", "nail", "wall"]
+
+## Python Lists, Slice Operator
+
+	a[start:end]
+	inclusive:exclusive
+
+Example:
+
+	> a = [0, 1, 2, 3, 4, 5]
+	> a[0:3]
+	[0, 1, 2]	
+	> a[2:3]
+	[2]
+	> a[2:]
+	[2, 3, 4, 5]
+	> a[:6]
+	[0, 1, 2, 3, 4, 5]
+	> a[:]
+	[0, 1, 2, 3, 4, 5]
+	
+### Quiz: Python Lists, Slice Operator
+
+things = ['apples', 'orange', 'pear', 'grape', 'kiwi']. What is the slice notation that will return the sublist ['orange', 'pear']?
+
+	things[1:3]
+
+## Python Lists, Inclusion
+	
+	>>> a = ['apple', 'pear', 'orange']
+	>>> 'pear' in a
+	True
+	>>> 'grape' in a
+	False
+	>>> if 'pear' in a:
+	...    print("There is a pear")
+	...
+	There is a pear
+	>>> if 'grape' in a:
+	... print("There is a grape"
+	...
+	>>>
+### Quiz: Python Lists, Inclusion
+
+Given a Python list called "fruit", write an if statement to check whether "apple" is in the list.
+Please use double quotes at this time.
+
+	if "apple" in fruit:
+
