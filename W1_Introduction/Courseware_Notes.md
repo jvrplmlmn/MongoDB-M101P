@@ -455,3 +455,47 @@ Test 2: /testpage:
 ## Bottle Framework: Using Cookies
 
 ![](./BottleFramework_Cookies.png)
+
+## The Pymongo Driver
+
+Connect to m101 db:
+
+	 ./mongo
+	 MongoDB shell version: 2.4.8
+	 connecting to: test
+	 > use m101
+	 switched to db m101
+	 >
+
+Run the python program:
+
+    python saving_data.py
+
+Check the db:
+
+    $ ./mongo
+    MongoDB shell version: 2.4.8
+    connecting to: test
+    > use m101
+    switched to db m101
+    > db.people.find()
+    { "_id" : ObjectId("5299ec153c4588415d8b5791"), "interests" : [  "government",  "basketball",  "the Middle East" ], "role" : "President", "name" : "Barack Obama", "address" : { "address1" : "The White House", "state" : "DC", "street" : "1600 Pennsylvania Avenue", "city" : "Washington" } }
+    > db.people.find().pretty()
+    {
+    	"_id" : ObjectId("5299ec153c4588415d8b5791"),
+    	"interests" : [
+    		"government",
+    		"basketball",
+    		"the Middle East"
+    	],
+    	"role" : "President",
+    	"name" : "Barack Obama",
+    	"address" : {
+    		"address1" : "The White House",
+    		"state" : "DC",
+    		"street" : "1600 Pennsylvania Avenue",
+    		"city" : "Washington"
+    	}
+    }
+    >
+    
