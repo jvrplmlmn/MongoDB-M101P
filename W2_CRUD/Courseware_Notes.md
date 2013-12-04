@@ -20,3 +20,62 @@ This week we'll learn the CRUD APIs in the *mongo* shell, and their analogs in *
 - How to measure performance of MongoDB operations
 - **How to manipulate MongoDB documents from Python**
 - How to analyze data in MongoDB collections
+
+## Secrets of the Mongo Shell
+
+When you connect with the mongo shell to a mongoDB, you get a banner showing the MongoDB shell version and information about the database you're connnected to:
+
+    $ mongo
+    MongoDB shell version: 2.2.0
+    Connecting to: test
+    > 
+
+The mongo shell is a JavaScript interpreter.
+
+Online help:
+
+    > help
+
+Autocompletion:
+
+    pri[tab]
+    |
+    |
+    v
+    print
+    
+
+JavaScript notes:
+
+    > x = 1
+    1
+    > x
+    1
+    > y = "abc"
+    abc
+    > z = { a : 1 }
+    { "a" : 1 }
+    > z.a
+    1
+    > z["a"]
+    1
+    > z.a
+    1
+    > w="a"
+    a
+    > z[w]
+    1
+    
+
+### Quiz: Secrets of the Mongo Shell
+
+What does the following fragment of JavaScript output?
+
+    x = { "a" : 1 };
+    y = "a";
+    x[y]++;
+    print(x.a);
+    
+Answer:
+
+**2**
