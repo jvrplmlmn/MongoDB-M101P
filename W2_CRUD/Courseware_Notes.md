@@ -268,3 +268,26 @@ The `$or` operator is a prefix operator.
 How would you find all documents in the scores collection where the score is less than 50 or greater than 90?
 
     db.scores.find( { $or : [ { score: { $lt: 50 } }, { score: { $gt: 90 } } ] })
+    
+## Using $and
+
+    db.people.find( { $and : [ { name : { $gt : "C" } }, { name : { $regex : "a" } } ] } )
+
+is equivalent to
+
+    db.people.find( { name : { $gt : "C", $regex : "a" } } )
+    
+### Quiz: Using $and
+
+What will the following query do?
+
+    db.scores.find( { score : { $gt : 50 }, score : { $lt : 60 } } );
+
+
+- Find all documents with score between 50 and 60
+- Find all documents with score greater than 50
+- **Find all documents with score less than 60**
+- Explode like the Death Star
+- None of the above
+
+> Note: The second ocurrence of score replaces the first one.
