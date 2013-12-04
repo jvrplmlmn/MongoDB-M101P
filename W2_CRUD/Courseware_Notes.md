@@ -326,3 +326,37 @@ Which of the following documents matches this query?
 - **{ name : "Cliff" , friends : [ "Pete" , "Joe" , "Tom" , "Bob" ] , favorites : [ "pickles", "cycling" ] }**
 - { name : "Harry" , friends : [ "Joe" , "Bob" ] , favorites : [ "hot dogs", "swimming" ] }
 
+## Queries with Dot Notation
+
+The purpouse of dot notation is to allow you to reach inside nested documents looking for a specific embedded piece of information without any knowledge of any surrounding context.
+
+    > db.users.insert({ name : "richard", email : { work : "richard@10gen.com", personal : "kreuter@example.com" } } );
+    > db.users.findOne()
+    {
+    	"_id" : ObjectId("529f88a1865b4afb26b0ca96"),
+    	"name" : "richard",
+    	"email" : {
+    		"work" : "richard@10gen.com",
+    		"personal" : "kreuter@example.com"
+    	}
+    }
+    > db.users.find( { email : { work : "richard@10gen.com", personal : "kreuter@example.com"  } } );
+    { "_id" : ObjectId("529f88a1865b4afb26b0ca96"), "name" : "richard", "email" : { "work" : "richard@10gen.com", "personal" : "kreuter@example.com" } }
+    > db.users.find( { email: { work : "richard@10gen.com" } } );
+    > db.users.find( { "email.work" : "richard@10gen.com" } );
+    { "_id" : ObjectId("529f88a1865b4afb26b0ca96"), "name" : "richard", "email" : { "work" : "richard@10gen.com", "personal" : "kreuter@example.com" } }
+    >
+        
+### Quiz: Queries with Dot Notation
+
+Suppose a simple e-commerce product *catalog* called catalog with documents that look like this:
+
+    { product : "Super Duper-o-phonic", 
+      price : 100000000000,
+      reviews : [ { user : "fred", comment : "Great!" , rating : 5 },
+                  { user : "tom" , comment : "I agree with Fred, somewhat!" , rating : 4 } ],
+      ... }
+  
+Write a query that finds all products that cost more than 10,000 and that have a rating of 5 or better.
+
+    db.catalog.find( { price : { $gt : 10000 }, "reviews.rating" : { $gte : 5} } )
