@@ -227,3 +227,34 @@ Which of the following will find all users with name between "F" and "Q"?
 - **db.users.find( { name : { $lte : "Q" , $gte : "F" } } );**
 - db.users.find( { name : { $gte : "f" , $lte : "Q" } } );
 - db.users.find( { name : { $lte : "Q" } });
+
+## Using regexes, $exists, $type
+
+`$exists`
+
+    db.people.find({ profession: { $exists: false } } );
+    db.people.find({ profession: { $exists: false}});
+
+`$type`
+
+    db.people.find({ name: { $type: 2 }});
+
+`$regex`
+
+Names that contains "a"
+    
+    db.people.find({name: { $regex: "a" }});
+
+Names that ends with an "e" (ends with a `$`):
+
+    db.people.find({name: { $regex: "e$" }});
+
+Names that start with an "A" (use the carrot: `^`)
+db.people.find({name: { $regex: "^A" }});
+
+
+### Quiz: Using regexes, $exists, $type
+
+Write a query that retrieves documents from a *users* collection where the name has a "q" in it, and the document has an *email* field.
+
+    db.users.find({ "name": { $regex: "q" }, "email": { $exists: true }})
