@@ -153,3 +153,37 @@ i.e.: `db.people.insert` *insert* is a method in the **people** *collection* of 
         "shape" : "round",
         "name" : "apple"
     }
+    
+## Introduction to findOne
+
+**[db.collection.findOne(\<criteria>, \<projection>)](http://docs.mongodb.org/manual/reference/method/db.collection.findOne/)**
+
+- criteria ~ where in sql
+- projection ~ select in sql
+
+    > db.people.findOne()
+    {
+    	"_id" : ObjectId("529f6fe10562bbaa3a82da00"),
+    	"name" : "Smith",
+    	"age" : 30,
+    	"profession" : "hacker"
+    }
+    > db.people.findOne({ "name" : "Jones" })
+    {
+    	"_id" : ObjectId("529f70732213bcdc3f293aac"),
+    	"name" : "Jones",
+    	"age" : 35,
+    	"profession" : "baker"
+    }
+    > db.people.findOne({ "name" : "Jones" }, { "name" : true, "_id" : false })
+    { "name" : "Jones" }
+    > db.people.findOne({ "name" : "Jones" }, { "name" : true })
+    { "_id" : ObjectId("529f70732213bcdc3f293aac"), "name" : "Jones" }
+    >
+
+
+### Quiz: Introduction to findOne
+
+Use findOne on the collection users to find one document where the key username is "dwight", and retrieve only the key named email.
+
+#     > db.users.findOne({ "username": "dwight" }, { "email": true, "_id": false })
