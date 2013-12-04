@@ -199,3 +199,20 @@ Use findOne on the collection users to find one document where the key username 
 Supposing a scores collection similar to the one presented, how would you find all documents with an essay score equal to 50 and only retrieve the *student* field?
 
     > db.scores.find({"type": "essay", "score": 50}, { "student": true, "_id": false})
+    
+## Querying Using $gt and $lt
+
+- **$gt**
+- **$gte**
+- **$lt**
+- **$lte**
+
+### Quiz: Querying Using $gt and $lt
+
+Which of these finds documents with a score between 50 and 60, inclusive?
+
+- db.scores.find({ score : { $gt : 50 , $lt : 60 } } );
+- **db.scores.find({ score : { $gte : 50 , $lte : 60 } } );**
+- db.scores.find({ score : { $gt : 50 , $lte : 60 } } );
+- db.scores.find({ score : { $gte : 50 , $lt : 60 } } );
+- db.scores.find({ score : { $gt : 50 } } );
