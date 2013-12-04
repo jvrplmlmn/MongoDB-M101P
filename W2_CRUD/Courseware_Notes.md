@@ -304,3 +304,25 @@ Which of the following documents would be returned by this query?
 - { _id : 704 , name : "Fooey Foo-o-tron", tags : [ "blue", "mediocre" ] }
 - **{ _id : 1040 , name : "Snappy Snap-o-lux", tags : "shiny" }**
 - { _id : 12345 , name : "Quuxinator", tags : [ ] }
+
+## Using $in and $all
+
+`$all` example:
+
+    db.accounts.find ( { favorites : { $all : [ "pretzels", "beer" ] } } )
+
+`$in` example:
+
+    db.accounts.find ( { name : { $in : [ "Howard", "John" ] } } )
+    
+### Quiz: Using $in and $all
+
+Which of the following documents matches this query?
+
+    db.users.find( { friends : { $all : [ "Joe" , "Bob" ] }, favorites : { $in : [ "running" , "pickles" ] } } )
+
+- { name : "William" , friends : [ "Bob" , "Fred" ] , favorites : [ "hamburgers", "running" ] }
+- { name : "Stephen" , friends : [ "Joe" , "Pete" ] , favorites : [ "pickles", "swimming" ] }
+- **{ name : "Cliff" , friends : [ "Pete" , "Joe" , "Tom" , "Bob" ] , favorites : [ "pickles", "cycling" ] }**
+- { name : "Harry" , friends : [ "Joe" , "Bob" ] , favorites : [ "hot dogs", "swimming" ] }
+
