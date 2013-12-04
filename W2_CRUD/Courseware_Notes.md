@@ -216,3 +216,14 @@ Which of these finds documents with a score between 50 and 60, inclusive?
 - db.scores.find({ score : { $gt : 50 , $lte : 60 } } );
 - db.scores.find({ score : { $gte : 50 , $lt : 60 } } );
 - db.scores.find({ score : { $gt : 50 } } );
+
+## Inequalities on Strings
+
+### Quiz: Inequalities on Strings
+
+Which of the following will find all users with name between "F" and "Q"?
+
+- **db.users.find( { name : { $gte : "F" , $lte : "Q" } } );**
+- **db.users.find( { name : { $lte : "Q" , $gte : "F" } } );**
+- db.users.find( { name : { $gte : "f" , $lte : "Q" } } );
+- db.users.find( { name : { $lte : "Q" } });
