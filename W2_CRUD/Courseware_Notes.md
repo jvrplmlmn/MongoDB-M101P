@@ -146,3 +146,10 @@ i.e.: `db.people.insert` *insert* is a method in the **people** *collection* of 
 > Insert a document into the fruit collection with the attributes of "name" being "apple", "color" being "red", and "shape" being "round". Use the "insert" method.
 
     > db.fruit.insert({"name" : "apple", "color" : "red", "shape" : "round"})
+    > db.fruit.find()
+    {
+        "_id" : ObjectId("529f7151132c1f614deafd3c"),
+        "color" : "red",
+        "shape" : "round",
+        "name" : "apple"
+    }
