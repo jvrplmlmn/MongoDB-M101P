@@ -291,3 +291,16 @@ What will the following query do?
 - None of the above
 
 > Note: The second ocurrence of score replaces the first one.
+
+## Querying Inside Arrays
+
+### Quiz: Querying Inside Arrays
+
+Which of the following documents would be returned by this query?
+
+    db.products.find( { tags : "shiny" } );
+
+- **{ _id : 42 , name : "Whizzy Wiz-o-matic", tags : [ "awesome", "shiny" , "green" ] }**
+- { _id : 704 , name : "Fooey Foo-o-tron", tags : [ "blue", "mediocre" ] }
+- **{ _id : 1040 , name : "Snappy Snap-o-lux", tags : "shiny" }**
+- { _id : 12345 , name : "Quuxinator", tags : [ ] }
