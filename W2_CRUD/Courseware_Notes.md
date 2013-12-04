@@ -187,3 +187,7 @@ i.e.: `db.people.insert` *insert* is a method in the **people** *collection* of 
 Use findOne on the collection users to find one document where the key username is "dwight", and retrieve only the key named email.
 
      > db.users.findOne({ "username": "dwight" }, { "email": true, "_id": false })
+     
+## Introduction to find
+
+**[db.colleection.find(\<criteria>, \<projection>)](http://docs.mongodb.org/manual/reference/method/db.collection.find/)**
