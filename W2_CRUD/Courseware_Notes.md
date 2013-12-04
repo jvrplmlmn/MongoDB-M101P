@@ -191,3 +191,11 @@ Use findOne on the collection users to find one document where the key username 
 ## Introduction to find
 
 **[db.colleection.find(\<criteria>, \<projection>)](http://docs.mongodb.org/manual/reference/method/db.collection.find/)**
+
+## Querying Using field selection
+
+### Quiz: Querying Using field selection
+
+Supposing a scores collection similar to the one presented, how would you find all documents with an essay score equal to 50 and only retrieve the *student* field?
+
+    > db.scores.find({"type": "essay", "score": 50}, { "student": true, "_id": false})
