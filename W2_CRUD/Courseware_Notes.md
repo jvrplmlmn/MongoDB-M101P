@@ -116,3 +116,33 @@ Which of the following are types available in BSON?
 - **Arrays**
 - **Objects**
 - **Timestamps**
+
+## Inserting Docs
+
+    $ mongo
+    MongoDB shell version: 2.4.8
+    connecting to: test
+    > doc = { "name" : "Smith", "age" : 30, "profession" : "hacker" }
+    { "name" : "Smith", "age" : 30, "profession" : "hacker" }
+    > db
+    test
+    > db.people.insert(doc)
+    > db.people.find()
+    { "_id" : ObjectId("529f6fe10562bbaa3a82da00"), "name" : "Smith", "age" : 30, "profession" : "hacker" }
+    > db.people.insert ( { "name" : "Jones", "age" : 35, "profession" : "baker" } )
+    > db.people.find()
+    { "_id" : ObjectId("529f6fe10562bbaa3a82da00"), "name" : "Smith", "age" : 30, "profession" : "hacker" }
+    { "_id" : ObjectId("529f70732213bcdc3f293aac"), "name" : "Jones", "age" : 35, "profession" : "baker" }
+    >
+      
+**ObjectID** is an unique identifier.
+ 
+i.e.: `db.people.insert` *insert* is a method in the **people** *collection* of the current *db*. 
+
+**db** handler of the connection to the db
+ 
+### Quiz: Inserting Docs
+
+> Insert a document into the fruit collection with the attributes of "name" being "apple", "color" being "red", and "shape" being "round". Use the "insert" method.
+
+    > db.fruit.insert({"name" : "apple", "color" : "red", "shape" : "round"})
