@@ -597,3 +597,24 @@ Give every document with a *score* less than 70 an extra 20 points.
 If you input an incorrect query, don't forget to reset the problem state, as any wrong *update* will likely take you away from your initial state. 
 
     db.scores.update({score: {$lt: 70}}, { $inc : { score : 20 } }, {multi: true})
+    
+## Removing Data
+
+    db.people.remove()
+    db.people.remove({ name : { $gt : "M" }})
+    db.people.drop()
+
+### Quiz: Removing Data
+
+Recall the schema of the *scores* collection:
+
+    {
+    	"_id" : ObjectId("50844162cb4cf4564b4694f8"),
+    	"student" : 0,
+    	"type" : "exam",
+    	"score" : 75
+    }
+
+Delete every document with a score of less than 60.
+
+    db.scores.remove({score : {$lt: 60}})
