@@ -182,3 +182,35 @@ which document would be returned?
 - **The document with _id=2**
 - The document with _id=3
 - The doucment with _id=4
+
+## Pymongo: Inserting
+
+Code:
+
+    insert_quiz.py
+    using_insert.py
+
+### Quiz: Pymongo: Inserting
+
+Do you expect the second insert below to succeed?
+
+    # get a handle to the school database
+    db=connection.school
+    people = db.people
+    
+    doc = {"name":"Andrew Erlichson", "company":"10gen",
+                  "interests":['running', 'cycling', 'photography']}
+    
+    try:
+            people.insert(doc)   # first insert
+            del(doc['_id'])
+            people.insert(doc)   # second insert
+    
+    except:
+            print "Unexpected error:", sys.exc_info()[0]
+
+- No, because the _id will be a duplicate in the collection.
+- No, because the del call will delete the entire record in Python.
+- **Yes, because the del call will remove the _id key added by the pymongo driver in the first insert.**
+- Yes, because the Pymongo driver always adds a unique _id field on insert.
+
