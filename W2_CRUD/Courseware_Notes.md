@@ -407,3 +407,15 @@ Recall the documents in the scores collection:
 Write a query that retrieves exam documents, sorted by score in descending order, skipping the first 50 and showing only the next 20.
 
     db.scores.find({type: "exam"}).sort({score: -1}).skip(50).limit(20)
+    
+## Counting Results
+
+    db.scores.find({type: "exam"})
+
+    db.scores.count({type: "exam"})
+
+### Quiz: Counting Results
+
+How would you count the documents in the scores collection where the type was "essay" and the score was greater than 90?
+
+    db.scores.count({type: "essay", score: {$gt: 90}})
