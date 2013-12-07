@@ -506,3 +506,55 @@ Write an update query that will remove the "interests" field in the following do
 Do not simply empty the array. Remove the key : value pair from the document.
 
     db.users.update({_id: "jimmy"}, {$unset: {interests: 1}})
+    
+## Using $push, $pop, $pull, $pushAll, $pullAll, $addToSet    
+
+    > db.arrays.insert( { _id: 0, a : [ 1, 2, 3, 4 ] } );
+    > db.arrays.findOne()
+    { "_id" : 0, "a" : [ 1, 2, 3, 4 ] }
+    > db.arrays.update( { _id : 0 }, { $set : { "a.2" : 5 } } );
+    > db.arrays.findOne()
+    { "_id" : 0, "a" : [ 1, 2, 5, 4 ] }
+    > db.arrays.update( { _id : 0 }, { $push : { a : 6 } } );
+    > db.arrays.findOne()
+    { "_id" : 0, "a" : [ 1, 2, 5, 4, 6 ] }
+    > db.arrays.update( { _id : 0 }, { $pop : { a : 1 } } );
+    > db.arrays.findOne()
+    { "_id" : 0, "a" : [ 1, 2, 5, 4 ] }
+    > db.arrays.update( { _id : 0 }, { $pop : { a : -1 } } );
+    > db.arrays.findOne()
+    { "_id" : 0, "a" : [ 2, 5, 4 ] }
+    > db.arrays.update( { _id : 0 }, { $pushAll : { a : [ 7, 8, 9 ] } } );
+    > db.arrays.findOne()
+    { "_id" : 0, "a" : [ 2, 5, 4, 7, 8, 9 ] }
+    > db.arrays.update( { _id : 0 }, { $pull: { a : 5 } } );
+    > db.arrays.findOne()
+    { "_id" : 0, "a" : [ 2, 4, 7, 8, 9 ] }
+    > db.arrays.update( { _id : 0 }, { $pullAll: { a : [ 2, 4, 8 ] } } );
+    > db.arrays.findOne()
+    { "_id" : 0, "a" : [ 7, 9 ] }
+    > db.arrays.update( { _id : 0 }, { $addToSet : { a : 5 } } );
+    > db.arrays.findOne()
+    { "_id" : 0, "a" : [ 7, 9, 5 ] }
+    > db.arrays.update( { _id : 0 }, { $addToSet : { a : 5 } } );
+    > db.arrays.update( { _id : 0 }, { $addToSet : { a : 5 } } );
+    > db.arrays.findOne()
+    { "_id" : 0, "a" : [ 7, 9, 5 ] }
+    >
+
+### Quiz: Using $push, $pop, $pull, $pushAll, $pullAll, $addToSet
+
+Suppose you have the following document in your friends collection:
+
+    { _id : "Mike", interests : [ "chess", "botany" ] }
+
+What will the result of the following updates be?
+
+    db.friends.update( { _id : "Mike" }, { $push : { interests : "skydiving" } } );
+    db.friends.update( { _id : "Mike" }, { $pop : { interests : -1 } } );
+    db.friends.update( { _id : "Mike" }, { $addToSet : { interests : "skydiving" } } );
+    db.friends.update( { _id : "Mike" }, { $pushAll: { interests : [ "skydiving" , "skiing" ] } } );
+    
+Answer:
+
+    { _id : "Mike", "interests" : [ "botany", "skydiving", "skydiving", "skiing" ] }    
