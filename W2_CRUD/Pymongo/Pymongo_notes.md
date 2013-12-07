@@ -32,3 +32,18 @@ In the following code snippet:
 please enter the one line of python code that would be needed in in place of xxxx to find one document in the collection.
 
     doc = scores.find_one()
+    
+## Pymongo: Using field Selection     
+
+Code:
+
+    python using_find_with_selector.py
+
+### Quiz: Pymongo: Using field Selection 
+
+Which of the following could work using Pymongo, depending on variable names, to select out just the student_id from the scores collection using a find command.
+
+- cursor = students.find({'student_id':1, '_id':0})
+- cursor = students.find({'student_id':1})
+- **cursor = students.find({}, {'student_id':1, '_id':0})**
+- cursor = students.find({}, {student_id:1, _id:0})
