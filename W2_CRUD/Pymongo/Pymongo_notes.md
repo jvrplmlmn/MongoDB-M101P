@@ -47,3 +47,47 @@ Which of the following could work using Pymongo, depending on variable names, to
 - cursor = students.find({'student_id':1})
 - **cursor = students.find({}, {'student_id':1, '_id':0})**
 - cursor = students.find({}, {student_id:1, _id:0})
+
+## Pymongo: Using $gt and $lt
+
+Code:
+
+    find_using_gt_lt.py
+
+### Quiz: Pymongo: Using $gt and $lt
+
+In the following code, what is the correct line of code, marked by xxxx, to search for all quiz scores that are greater than 20 and less than 90.
+
+    import pymongo
+    import sys
+    
+    # establish a connection to the database
+    connection = pymongo.Connection("mongodb://localhost", safe=True)
+    
+    # get a handle to the school database
+    db=connection.school
+    scores = db.scores
+    
+    
+    def find():
+    
+        print "find, reporting for duty"
+    
+        xxxx
+    
+        try:
+            iter = scores.find(query)
+    
+        except:
+            print "Unexpected error:", sys.exc_info()[0]
+            
+        return iter
+    
+    find()
+
+
+- query = {'score':{'$gt':20, '$lt':90}}
+- **query = {'type':'quiz', 'score':{'$gt':20, '$lt':90}}**
+- query = {'type':'quiz', '$gt':{'score':20}, '$lt':{'score':90}}
+- query = {'type':'quiz', 'score':{$gt:20, $lt:90}}
+
