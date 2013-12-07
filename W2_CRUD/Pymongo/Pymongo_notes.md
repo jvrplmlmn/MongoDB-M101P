@@ -214,3 +214,40 @@ Do you expect the second insert below to succeed?
 - **Yes, because the del call will remove the _id key added by the pymongo driver in the first insert.**
 - Yes, because the Pymongo driver always adds a unique _id field on insert.
 
+## Pymongo: Updating
+
+Code:
+
+    using_update.py
+
+### Quiz: Pymongo: Updating
+
+In the following code fragment, what is the python expression in place of xxxx to set a new key "examiner" to be "Jones" Please use the $set operator
+
+    def using_set():
+    
+        print "updating record using set"
+        # get a handle to the school database
+        db=connection.school
+        scores = db.scores
+    
+    
+        try:
+            # get the doc
+            score = scores.find_one({'student_id':1, 'type':'homework'})
+            print "before: ", score
+    
+            # update using set
+            scores.update({'student_id':1, 'type':'homework'},
+                          xxxx)
+    
+            score = scores.find_one({'student_id':1, 'type':'homework'})
+            print "after: ", score
+    
+        except:
+            print "Unexpected error:", sys.exc_info()[0]
+            raise
+            
+Answer:
+
+    {'$set' : {'examiner': 'Jones'}}            
