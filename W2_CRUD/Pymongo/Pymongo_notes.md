@@ -97,4 +97,8 @@ Code:
     
     python read_reddit.py
     
-    
+## Pymongo: Using a regex
+
+Code:
+
+    python using_regex.py    
