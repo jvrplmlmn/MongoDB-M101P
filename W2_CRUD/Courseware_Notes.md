@@ -558,3 +558,20 @@ What will the result of the following updates be?
 Answer:
 
     { _id : "Mike", "interests" : [ "botany", "skydiving", "skydiving", "skiing" ] }    
+    
+## Upserts
+
+    db.people.update( { name : "George" }, { $set : {age : 40 } }, { upsert : true } )
+    
+### Quiz: Upserts    
+
+After performing the following update on an empty collection
+
+    db.foo.update({username:'bar'}, {'$set':{'interests':['cat', 'dog']}}, {upsert: true} );
+
+What could be the state of the collection.
+
+- { "_id" : ObjectId("507b78232e8dfde94c149949"), "interests" : [ "cat", "dog" ]}
+- {"interests" : [ "cat", "dog" ], "username" : "bar" }
+- {}
+- **{ "_id" : ObjectId("507b78232e8dfde94c149949"), "interests" : [ "cat", "dog" ], "username" : "bar" }**
