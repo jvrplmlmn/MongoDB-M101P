@@ -575,3 +575,25 @@ What could be the state of the collection.
 - {"interests" : [ "cat", "dog" ], "username" : "bar" }
 - {}
 - **{ "_id" : ObjectId("507b78232e8dfde94c149949"), "interests" : [ "cat", "dog" ], "username" : "bar" }**
+
+## Multi-update
+
+    db.people.update( {}, { $set : { title : "Dr" } }, { multi : true } )
+
+### Quiz: Multi-update
+
+Recall the schema of the *scores* collection:
+
+    {
+    	"_id" : ObjectId("50844162cb4cf4564b4694f8"),
+    	"student" : 0,
+    	"type" : "exam",
+    	"score" : 75
+    }
+
+
+Give every document with a *score* less than 70 an extra 20 points. 
+
+If you input an incorrect query, don't forget to reset the problem state, as any wrong *update* will likely take you away from your initial state. 
+
+    db.scores.update({score: {$lt: 70}}, { $inc : { score : 20 } }, {multi: true})
