@@ -91,3 +91,10 @@ In the following code, what is the correct line of code, marked by xxxx, to sear
 - query = {'type':'quiz', '$gt':{'score':20}, '$lt':{'score':90}}
 - query = {'type':'quiz', 'score':{$gt:20, $lt:90}}
 
+## Importing from Reddit
+
+Code:
+    
+    python read_reddit.py
+    
+    
