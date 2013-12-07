@@ -618,3 +618,23 @@ Recall the schema of the *scores* collection:
 Delete every document with a score of less than 60.
 
     db.scores.remove({score : {$lt: 60}})
+    
+## getLastError
+
+    > db.people.insert( { _id : "Smith", age : 30 } );
+    > db.people.insert( { _id : "Smith", age : 30 } );
+    E11000 duplicate key error index: test.people.$_id_  dup key: { : "Smith" }
+    > db.runCommand( { getLastError : 1 } )
+    {
+    	"err" : "E11000 duplicate key error index: test.people.$_id_  dup key: { : \"Smith\" }",
+    	"code" : 11000,
+    	"n" : 0,
+    	"connectionId" : 2,
+    	"ok" : 1
+    }
+    > db.people.insert( { _id : "Jones", age : 30 } );
+    > db.runCommand( { getLastError : 1 } )
+    { "n" : 0, "connectionId" : 2, "err" : null, "ok" : 1 }
+    >
+    
+    
