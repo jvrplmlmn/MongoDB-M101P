@@ -153,3 +153,32 @@ In the following code, what do you think will happen if a document that matches 
 - **Pymongo will return an empty document.**
 - Pymongo will return a document with the following structure {media:{oembed:{url:{}}}}
 - Pymongo will return a document with the following structure {media:{oembed:{}}}
+
+## Pymongo: Sort, Skip and Limit
+
+skip(2), limit(3), sort(1)
+
+Code:
+
+    python using_limit_skip_sort.py
+
+### Quiz: Pymongo: Sort, Skip and Limit
+
+Supposed you had the following documents in a collection named things.
+
+    { "_id" : 0, "value" : 10 }
+    { "_id" : 2, "value" : 5 }
+    { "_id" : 3, "value" : 7 }
+    { "_id" : 4, "value" : 20 }
+
+If you performed the following query in pymongo:
+
+    cursor = things.find().skip(3).limit(1).sort('value',pymongo.DESCENDING)
+
+which document would be returned?
+
+
+- The document with _id=0
+- **The document with _id=2**
+- The document with _id=3
+- The doucment with _id=4
