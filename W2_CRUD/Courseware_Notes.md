@@ -360,3 +360,50 @@ Suppose a simple e-commerce product *catalog* called catalog with documents that
 Write a query that finds all products that cost more than 10,000 and that have a rating of 5 or better.
 
     db.catalog.find( { price : { $gt : 10000 }, "reviews.rating" : { $gte : 5} } )
+    
+## Querying, Cursors
+
+**[cursor](http://docs.mongodb.org/manual/reference/glossary/#term-cursor)**
+
+> A pointer to the result set of a query. Clients can iterate through a cursor to retrieve results. By default, cursors timeout after 10 minutes of inactivity.
+
+In the `mongo` shell, the primary method for the read operation is the `db.collection.find()` method. This method queries a collection and returns a cursor to the returning documents.
+
+To access the documents, you need to iterate the cursor. However, in the `mongo` shell, if the returned cursor is not assigned to a variable using the var keyword, then the cursor is automatically iterated up to 20 times to print up to the first 20 documents in the results.
+
+
+
+#### Cursor methods
+
+`cursor.sort()` Returns results ordered according to a sort specification.
+
+`cursor.limit()` Constrains the size of a cursor’s result set.
+
+`cursor.skip()` Returns a cursor that begins returning results only after passing or skipping a number of documents.
+
+#### Examples:
+
+
+    cur.sort ( { name : -1 } ); null;
+
+    cur.sort ( { name : -1 } ).limit(3); null;
+    
+    while (cur.hasNext()) printjson(cur.next());
+   
+    cur.sort ( { name : -1 } ).limit(3).skip(2); null;
+     
+    
+### Quiz: Querying, Cursors    
+
+Recall the documents in the scores collection:
+
+    {
+    	"_id" : ObjectId("50844162cb4cf4564b4694f8"),
+    	"student" : 0,
+    	"type" : "exam",
+    	"score" : 75
+    }
+
+Write a query that retrieves exam documents, sorted by score in descending order, skipping the first 50 and showing only the next 20.
+
+    db.scores.find({type: "exam"}).sort({score: -1}).skip(50).limit(20)
