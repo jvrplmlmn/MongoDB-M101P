@@ -251,3 +251,24 @@ In the following code fragment, what is the python expression in place of xxxx t
 Answer:
 
     {'$set' : {'examiner': 'Jones'}}            
+    
+## Pymongo: Upserts
+
+Code:
+
+    using_upsert.py
+    
+### Quiz: Pymongo: Upserts    
+
+Suppose we would like to upsert the following document into the collection *stuff*:
+
+    {_id:"bat", friend:'ball', cousin:'glove'}
+
+Which of the following python statements work. Check all that apply.
+
+
+- stuff.update({'_id':'bat'}, {'friend':'ball', 'cousin':'glove'}, upsert=True)
+- stuff.update({'_id':'bat'}, {'friend':'ball', 'cousin':'glove'}, upsert=False)
+- **stuff.update({'_id':'bat'}, {'_id':'bat', 'friend':'ball', 'cousin':'glove'}, upsert=True)**
+- **stuff.update({'_id':'bat'}, {'$set': {'friend':'ball', 'cousin':'glove'}}, upsert=True)**
+
