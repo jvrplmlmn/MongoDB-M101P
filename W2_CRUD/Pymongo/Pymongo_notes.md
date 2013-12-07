@@ -272,3 +272,8 @@ Which of the following python statements work. Check all that apply.
 - **stuff.update({'_id':'bat'}, {'_id':'bat', 'friend':'ball', 'cousin':'glove'}, upsert=True)**
 - **stuff.update({'_id':'bat'}, {'$set': {'friend':'ball', 'cousin':'glove'}}, upsert=True)**
 
+## Pymongo: find_and_modify
+
+Code:
+
+    using_find_and_modify.py
