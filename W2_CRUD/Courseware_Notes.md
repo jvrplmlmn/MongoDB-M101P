@@ -490,3 +490,19 @@ Hint: You should not need to pass the "phone" field to the update query.
     
     db.users.update({_id: "myrnarackham"}, {$set: {country: "RU"}})
     
+    
+## Using the $unset Command
+
+### Quiz: Using the $unset Command    
+
+Write an update query that will remove the "interests" field in the following document in the *users* collection.
+
+    { 
+        "_id" : "jimmy" , 
+        "favorite_color" : "blue" , 
+        "interests" : [ "debating" , "politics" ] 
+    }
+
+Do not simply empty the array. Remove the key : value pair from the document.
+
+    db.users.update({_id: "jimmy"}, {$unset: {interests: 1}})
