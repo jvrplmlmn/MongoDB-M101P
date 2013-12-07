@@ -458,3 +458,35 @@ What would be the state of the collection after the update?
 - { "_id" : "Texas", "population" : 3000000, "land_locked" : 1 }
 - **{ "_id" : "Texas", "population" : 30000000 }**
 - { "_id" : ObjectId("507b7c601eb13126c9e3dcca"), "population" : 2500000 }
+
+## Using the $set Command
+
+**[$set operator](http://docs.mongodb.org/manual/reference/operator/update/set/#up._S_set)**
+
+**Syntax:** `{ $set: { <field1>: <value1>, ... } }`
+
+Use the `$set` operator to replace the value of a field to the specified value. If the field does not exist, the $set operator will add the field with the specified value.
+
+**[$inc operator](http://docs.mongodb.org/manual/reference/operator/update/inc/)**
+
+The `$inc` operator increments a value of a field by a specified amount. If the field does not exist, `$inc` adds the field and sets the field to the specified amount. `$inc` accepts positive and negative incremental amounts. Consider the following syntax:
+
+    { $inc: { <field1>: <amount1>, ... } }
+
+### Quiz: Using the $set Command
+
+For the *users* collection, the documents are of the form
+
+    {
+    	"_id" : "myrnarackham",
+    	"phone" : "301-512-7434",
+    	"country" : "US"
+    }
+
+Please set myrnarackham's country code to "RU" but leave the rest of the document (and the rest of the collection) unchanged. 
+
+Hint: You should not need to pass the "phone" field to the update query.
+
+    
+    db.users.update({_id: "myrnarackham"}, {$set: {country: "RU"}})
+    
