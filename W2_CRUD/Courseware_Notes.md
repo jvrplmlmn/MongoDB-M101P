@@ -419,3 +419,42 @@ Write a query that retrieves exam documents, sorted by score in descending order
 How would you count the documents in the scores collection where the type was "essay" and the score was greater than 90?
 
     db.scores.count({type: "essay", score: {$gt: 90}})
+    
+## Wholesale Updating of a Document    
+
+#### Definition
+
+`db.collection.update(query, update, options)`
+
+Modifies an existing document or documents in a collection. By default, the `update()` method updates a **single** document. If the multi option is set to true, the method updates all documents that match the query criteria.
+
+
+
+    db.collection.update(
+                          <query>,
+                          <update>,
+                          {
+                            upsert: <Boolean>,
+                            multi: <Boolean>,
+                          }
+                        )
+---
+
+    db.people.update( { name: "Smith" }, { name: "Thompson", salary: 50000 } );
+
+### Quiz: Wholesale Updating of a Document
+
+Let's say you had a collection with the following document in it:
+
+    { "_id" : "Texas", "population" : 2500000, "land_locked" : 1 }
+
+and you issued the query:
+
+    db.foo.update({_id:"Texas"},{population:30000000})
+
+What would be the state of the collection after the update?
+
+- { "_id" : "Texas", "population" : 2500000, "land_locked" : 1 }
+- { "_id" : "Texas", "population" : 3000000, "land_locked" : 1 }
+- **{ "_id" : "Texas", "population" : 30000000 }**
+- { "_id" : ObjectId("507b7c601eb13126c9e3dcca"), "population" : 2500000 }
