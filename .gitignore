@@ -1,1 +1,4 @@
 *.mp4
+
+# PyCharm from JetBrains
+.idea
